@@ -1,52 +1,51 @@
-# My HTML CSS JS Project
+# Calculadora de IMC
 
-This project is a simple web application that demonstrates the use of HTML, CSS, and JavaScript to create an interactive webpage.
+Projeto web simples para calcular o Índice de Massa Corporal (IMC) com interface em HTML/CSS/JS.
 
-## Project Structure
+## Funcionalidades
+- Cálculo de IMC (peso / altura²)
+- Aceita decimais com vírgula ou ponto (JS faz a conversão)
+- Exibe classificação conforme intervalo de IMC
+- Layout responsivo: calculadora centralizada no mobile e tabela abaixo
 
+## Estrutura
+- assets/src/index.html — página principal
+- assets/src/styles/style.css — estilos
+- assets/src/scripts/script.js — lógica JS
+
+## Como rodar localmente
+Opção 1 — Live Server (recomendado, VS Code)
+1. Instale extensão Live Server
+2. Clique em "Go Live"
+
+Opção 2 — servidor simples com npx
+```powershell
+npx serve assets/src
 ```
-my-html-css-js-project
-├── src
-│   ├── index.html       # Main HTML document
-│   ├── styles
-│   │   └── style.css    # Styles for the project
-│   └── scripts
-│       └── app.js       # JavaScript code for interactivity
-└── README.md            # Project documentation
+(Se PowerShell bloquear npx, use Live Server ou ajuste `Set-ExecutionPolicy`.)
+
+Abra `http://localhost:5000` (ou a porta mostrada).
+
+## Deploy no Firebase Hosting
+1. Instale Firebase CLI:
+```powershell
+npm install -g firebase-tools
+```
+2. Login e inicialização (na pasta do projeto):
+```powershell
+firebase login
+firebase init
+# quando perguntado, defina "public" como: assets/src
+# responda "No" para sobrescrever index.html se for o caso
+```
+3. Deploy:
+```powershell
+firebase deploy --only hosting
 ```
 
-## Getting Started
+## Contribuição
+- Faça fork, crie branch, commit e PR.
+- Mantenha HTML/CSS/JS organizados em `assets/src`.
 
-To get a local copy up and running, follow these simple steps.
-
-### Prerequisites
-
-You will need a web browser to view the project.
-
-### Installation
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd my-html-css-js-project
-   ```
-
-### Running the Project
-
-1. Open `src/index.html` in your web browser.
-2. You should see the webpage rendered with the styles applied and JavaScript functionality.
-
-## Usage
-
-Feel free to modify the HTML, CSS, and JavaScript files to customize the project to your liking.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you would like to add.
-
-## License
-
-This project is open-source and available under the MIT License.
+## Licença
+Projeto sem licença especificada — adicione uma licença se desejar.
